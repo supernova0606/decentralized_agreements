@@ -82,8 +82,8 @@ var BrdShow = function (_Component) {
 
       var items = [{
         header: manager,
-        meta: 'Manager address',
-        description: 'Manager who owns this room',
+        meta: 'Manager Address',
+        description: 'The Manager who owns this room',
         style: { overflowWrap: 'break-word' }
       }, {
         header: minimumContribution,
@@ -91,10 +91,10 @@ var BrdShow = function (_Component) {
         description: 'You must fund at least this much to participate'
       }, {
         header: requestsCount,
-        meta: 'Number of Pending Deals'
+        meta: 'Total Deals'
       }, {
         header: approversCount,
-        meta: 'Number of Members'
+        meta: 'Total Members'
       }, {
         header: _web2.default.utils.fromWei(balance, 'ether') + ' ETH',
         meta: 'House Balance'

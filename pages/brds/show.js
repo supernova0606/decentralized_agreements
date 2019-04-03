@@ -34,8 +34,8 @@ class BrdShow extends Component {
     const items = [
       {
         header: manager,
-        meta: 'Manager address',
-        description: 'Manager who owns this room',
+        meta: 'Manager Address',
+        description: 'The Manager who owns this room',
         style: { overflowWrap: 'break-word' }
       },
       {
@@ -45,11 +45,11 @@ class BrdShow extends Component {
       },
       {
         header: requestsCount,
-        meta: 'Number of Pending Deals'
+        meta: 'Total Deals'
       },
       {
         header: approversCount,
-        meta: 'Number of Members'
+        meta: 'Total Members'
       },
       {
         header: `${web3.utils.fromWei(balance, 'ether')} ETH`,
