@@ -1,4 +1,4 @@
-# deca_brd
+# Back Room Deals
 
 Agreements on the ethereum network.
 Host agreements in individual "rooms". 
