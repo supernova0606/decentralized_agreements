@@ -8,7 +8,7 @@ Host agreements in individual "rooms".
 node compile.js
 node deploy.js
 ```
-2. Replace '***your deployed contract address***' in /ethereum/contracts with the contract address
+2. Replace '***your deployed contract address***' in /ethereum/contracts/factory.js with new contract address
 3. npm run dev
 
 ```
