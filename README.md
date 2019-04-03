@@ -1,4 +1,4 @@
-# Back Room Deals
+# brDeals
 
 Agreements on the ethereum network.
 Host agreements in individual "rooms". 
