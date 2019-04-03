@@ -1,14 +1,15 @@
 # deca_brd
 
-`npm install`
-`npm run dev`
+Agreements on the ethereum network.
+Host agreements in individual "rooms". 
 
-1. Go to /ethereum
-2. Run node compile.js
-3. Run node deploy.js and copy the contract address
-4. Create a factory.js file in ethereum/contracts/
-5. Paste the code below
-6. Replace '***your deployed contract address***' with the contract address from step #3
+1. Run below commands in /ethereum and copy the contract address
+```
+node compile.js
+node deploy.js
+```
+2. Replace '***your deployed contract address***' in /ethereum/contracts with the contract address
+3. npm run dev
 
 ```
 import web3 from './web3';
@@ -21,3 +22,5 @@ const instance = new web3.eth.Contract(
 
 export default instance;
 ```
+
+**Currently setup for Rinkeby network. You can update this in /ethereum/web3.js.**
