@@ -10,7 +10,7 @@
 5. Paste the code below
 6. Replace '***your deployed contract address***' with the contract address from step #3
 
-`
+```
 import web3 from './web3';
 import Factory from './build/Factory.json';
 
@@ -20,4 +20,4 @@ const instance = new web3.eth.Contract(
 );
 
 export default instance;
-`
+```
