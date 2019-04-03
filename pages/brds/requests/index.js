@@ -5,6 +5,7 @@ import Layout from '../../../components/Layout';
 import Brd from '../../../ethereum/brd';
 import RequestRow from '../../../components/RequestRow';
 import FundForm from '../../../components/FundForm';
+import web3 from '../../../ethereum/web3';
 
 class BrdIndex extends Component {
   static async getInitialProps(props) {
@@ -12,6 +13,7 @@ class BrdIndex extends Component {
     const brd = Brd(address);
     const requestCount = await brd.methods.getRequestsCount().call();
     const approversCount = await brd.methods.approversCount().call();
+    const summary = await brd.methods.getSummary().call();
 
     const requests = await Promise.all(
       Array(parseInt(requestCount))
@@ -20,7 +22,13 @@ class BrdIndex extends Component {
           return brd.methods.requests(index).call();
         })
     );
-    return { address, requests, requestCount, approversCount };
+    return {
+      address,
+      requests,
+      requestCount,
+      approversCount,
+      balance: summary[1]
+    };
   }
 
   renderRows() {
@@ -71,6 +79,7 @@ class BrdIndex extends Component {
             </Header>
             <Body>{this.renderRows()}</Body>
           </Table>
+          <h3>House Balance: {this.props.balance / 1000000000000000000} ETH</h3>
           <h3 style={{ marginTop: 33 }}>Need to fund?</h3>
           <FundForm address={this.props.address} />
         </div>

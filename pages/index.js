@@ -34,11 +34,7 @@ class BrdIndex extends Component {
           <h3 style={{ marginTop: 10 }}>Open Rooms</h3>
           <Link route='/brds/new'>
             <a>
-              <Button
-                floated='right'
-                content='Create BRD'
-                color='green'
-              />
+              <Button floated='right' content='Create Room' color='green' />
             </a>
           </Link>
           {this.renderBrds()}

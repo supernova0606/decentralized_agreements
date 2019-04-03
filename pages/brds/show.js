@@ -40,8 +40,8 @@ class BrdShow extends Component {
       },
       {
         header: minimumContribution,
-        meta: 'Minimum Contribution',
-        description: 'You must contribute at least this much to participate'
+        meta: 'Funding Minimum',
+        description: 'You must fund at least this much to participate'
       },
       {
         header: requestsCount,
@@ -52,8 +52,8 @@ class BrdShow extends Component {
         meta: 'Number of Members'
       },
       {
-        header: web3.utils.fromWei(balance, 'ether'),
-        meta: 'House Balance (ETH)'
+        header: `${web3.utils.fromWei(balance, 'ether')} ETH`,
+        meta: 'House Balance'
       }
     ];
 

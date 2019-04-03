@@ -1,6 +1,5 @@
 node_modules
-# .next
-# ethereum/build/
+.next
+ethereum/build/
 .DS_Store
 npm-debug.log
-# ethereum/contracts/factory.js
