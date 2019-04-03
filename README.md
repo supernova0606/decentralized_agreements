@@ -1,6 +1,6 @@
 # brDeals
 
-React, Solidity, Web3, Semantic-UI
+>React, Solidity, Web3, Semantic-UI
 
 Agreements on the ethereum network.
 Host agreements in individual "rooms". 
