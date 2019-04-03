@@ -24,7 +24,7 @@ class BrdNew extends Component {
       });
 
       //creates history page
-      Router.pushRoute(`/brds/${this.props.address}/requests/new`);
+      Router.pushRoute(`/`);
     } catch (err) {
       this.setState({ errorMessage: err.message });
     }

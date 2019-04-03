@@ -32,7 +32,7 @@ class RequestRow extends Component {
         disabled={request.complete}
         positive={readyToFinalize && !request.complete}
       >
-        <Cell>{id}</Cell>
+        <Cell>{id + 1}</Cell>
         <Cell>{request.description}</Cell>
         <Cell>{web3.utils.fromWei(request.value, 'ether')}</Cell>
         <Cell>{request.recipient}</Cell>
@@ -41,14 +41,14 @@ class RequestRow extends Component {
         </Cell>
         <Cell>
           {request.complete ? null : (
-            <Button color='green' basic onClick={this.onApprove}>
+            <Button color='blue' basic onClick={this.onApprove}>
               Approve
             </Button>
           )}
         </Cell>
         <Cell>
           {request.complete ? null : (
-            <Button color='teal' basic onClick={this.onFinalize}>
+            <Button color='green' basic onClick={this.onFinalize}>
               Finalize
             </Button>
           )}

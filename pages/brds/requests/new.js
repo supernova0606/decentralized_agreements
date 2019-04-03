@@ -32,7 +32,7 @@ class RequestNew extends Component {
         .createRequest(description, web3.utils.toWei(value, 'ether'), recipient)
         .send({ from: accounts[0] });
 
-      Router.pushRoute(`/brds/${this.props.address}/requests`);
+      Router.pushRoute(`/brds/${this.props.address}`);
     } catch (err) {
       this.setState({ errorMessage: err.message });
     }

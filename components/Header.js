@@ -4,7 +4,7 @@ import { Link } from '../routes';
 
 export default () => {
   return (
-    <Menu attached='top' style={{ marginTop: '33px' }}>
+    <Menu attached='top' tabular style={{ marginTop: '33px' }}>
       <Link route='/'>
         <a className='item'>Back Room Deals</a>
       </Link>
