@@ -18,6 +18,7 @@ contract Brd {
         string description;
         uint value;
         address recipient;
+        address secondRecipient;
         bool complete;
         uint approvalCount;
         mapping(address => bool) approvals;
@@ -46,11 +47,12 @@ contract Brd {
         approversCount++;
     }
 
-    function createRequest(string description, uint value, address recipient) public restricted {
+    function createRequest(string description, uint value, address recipient, address secondRecipient) public restricted {
         Request memory newRequest = Request({
            description: description,
            value: value,
            recipient: recipient,
+           secondRecipient: secondRecipient,
            complete: false,
            approvalCount: 0
         });

@@ -10,6 +10,7 @@ class RequestNew extends Component {
     value: '',
     description: '',
     recipient: '',
+    // secondRecipient: '',
     loading: false,
     errorMessage: ''
   };
@@ -23,16 +24,21 @@ class RequestNew extends Component {
     event.preventDefault();
 
     const brd = Brd(this.props.address);
-    const { description, value, recipient } = this.state;
+    const { description, value, recipient, secondRecipient } = this.state;
 
     this.setState({ loading: true, errorMessage: '' });
     try {
       const accounts = await web3.eth.getAccounts();
       await brd.methods
-        .createRequest(description, web3.utils.toWei(value, 'ether'), recipient)
+        .createRequest(
+          description,
+          web3.utils.toWei(value, 'ether'),
+          recipient,
+          secondRecipient
+        )
         .send({ from: accounts[0] });
 
-      Router.pushRoute(`/brds/${this.props.address}`);
+      Router.pushRoute(`/brds/${this.props.address}/requests`);
     } catch (err) {
       this.setState({ errorMessage: err.message });
     }
@@ -65,11 +71,20 @@ class RequestNew extends Component {
             />
           </Form.Field>
           <Form.Field>
-            <label>Recipient</label>
+            <label>Winning Recipient</label>
             <Input
               value={this.state.recipient}
               onChange={event =>
                 this.setState({ recipient: event.target.value })
+              }
+            />
+          </Form.Field>
+          <Form.Field>
+            <label>Losing Recipient</label>
+            <Input
+              value={this.state.secondRecipient}
+              onChange={event =>
+                this.setState({ secondRecipient: event.target.value })
               }
             />
           </Form.Field>

@@ -16,7 +16,7 @@ class BrdIndex extends Component {
         header: address,
         description: (
           <div>
-            <Link route={`/brds/${address}`}>
+            <Link route={`/brds/${address}/requests`}>
               <a>View</a>
             </Link>
           </div>

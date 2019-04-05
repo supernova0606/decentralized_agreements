@@ -14,6 +14,7 @@ class BrdIndex extends Component {
     const requestCount = await brd.methods.getRequestsCount().call();
     const approversCount = await brd.methods.approversCount().call();
     const summary = await brd.methods.getSummary().call();
+    const accounts = await web3.eth.getAccounts();
 
     const requests = await Promise.all(
       Array(parseInt(requestCount))
@@ -22,12 +23,19 @@ class BrdIndex extends Component {
           return brd.methods.requests(index).call();
         })
     );
+    {
+      console.log(this.props);
+    }
+
     return {
       address,
       requests,
       requestCount,
       approversCount,
-      balance: summary[1]
+      accounts,
+      minimumContribution: summary[0],
+      balance: summary[1],
+      manager: summary[4]
     };
   }
 
@@ -39,6 +47,7 @@ class BrdIndex extends Component {
           id={index}
           request={request}
           address={this.props.address}
+          // secondRecipient={request.secondRecipient}
           approversCount={this.props.approversCount}
         />
       );
@@ -50,9 +59,11 @@ class BrdIndex extends Component {
 
     return (
       <Layout>
-        <Link route={`/brds/${this.props.address}`}>
+        <Link route={`/`}>
           <a>Back</a>
         </Link>
+        <h1>Room: {this.props.manager} ETH</h1>
+        <h3>Room Balance: {this.props.balance / 1000000000000000000} ETH</h3>
         <div>
           <Link route={`/brds/${this.props.address}/requests/new`}>
             <a>
@@ -71,16 +82,17 @@ class BrdIndex extends Component {
                 <HeaderCell>ID</HeaderCell>
                 <HeaderCell>Description</HeaderCell>
                 <HeaderCell>Amount</HeaderCell>
-                <HeaderCell>Recipient</HeaderCell>
+                <HeaderCell>Winning Address</HeaderCell>
+                {/* <HeaderCell>Losing Address</HeaderCell> */}
                 <HeaderCell>Approval Count</HeaderCell>
-                <HeaderCell>Approve</HeaderCell>
+                <HeaderCell>True</HeaderCell>
+                {/* <HeaderCell>False</HeaderCell> */}
                 <HeaderCell>Finalize</HeaderCell>
               </Row>
             </Header>
             <Body>{this.renderRows()}</Body>
           </Table>
-          <h3>House Balance: {this.props.balance / 1000000000000000000} ETH</h3>
-          <h3 style={{ marginTop: 33 }}>Need to fund?</h3>
+          <h1 style={{ marginTop: 33 }}>Need to fund?</h1>
           <FundForm address={this.props.address} />
         </div>
       </Layout>

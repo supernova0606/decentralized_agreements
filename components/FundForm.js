@@ -25,7 +25,7 @@ class FundForm extends Component {
         value: web3.utils.toWei(this.state.value, 'ether')
       });
 
-      Router.replaceRoute(`/brds/${this.props.address}`);
+      Router.replaceRoute(`/brds/${this.props.address}/requests`);
     } catch (err) {
       this.setState({ errorMessage: err.message });
     }

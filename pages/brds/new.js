@@ -35,11 +35,11 @@ class BrdNew extends Component {
   render() {
     return (
       <Layout>
-        <h3>Create New Room</h3>
+        <h3>Create Room</h3>
 
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>
-            <label>Funding Minimum</label>
+            <label />
             <Input
               label='wei'
               labelPosition='left'

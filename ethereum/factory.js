@@ -6,7 +6,7 @@ const instance = new web3.eth.Contract(
   // node deploy.js
   // put new deployed address below
   JSON.parse(Factory.interface),
-  '0x19Ff0862a4ebBd87ea16D2EB162e57d22262dfe5'
+  '0x501B45720BB657A9fCD2733d07D2718730d8A5c1'
 );
 
 export default instance;
