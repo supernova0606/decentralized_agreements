@@ -1,5 +1,3 @@
-# Decentralized Agreements
-
 React, Next.js, Solidity, Web3, Infura, Semantic-UI
 
 Agreements on the ethereum network.
