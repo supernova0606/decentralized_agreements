@@ -11,6 +11,6 @@ node deploy.js
 ```
 
 2. Replace '**_your deployed contract address_**' in /ethereum/contracts/factory.js with new contract address
-3. npm run dev
+3. `npm run dev`
 
 **Currently setup for Rinkeby network. Update this in /ethereum/web3.js.**
