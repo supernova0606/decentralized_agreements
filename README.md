@@ -5,6 +5,6 @@ node compile.js
 node deploy.js
 ```
 
-Update '**_your deployed contract address_**' in /ethereum/contracts/factory.js with new contract address
+Update deployed contract address in /ethereum/contracts/factory.js
 
-**Using inkeby network. Update in /ethereum/web3.js.**
+Update network in /ethereum/web3.js.
