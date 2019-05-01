@@ -1,5 +1,3 @@
-React, Next.js, Solidity, Web3, Infura, Semantic-UI
-
 ```
 node compile.js
 node deploy.js
